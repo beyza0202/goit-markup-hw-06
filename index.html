@@ -21,6 +21,9 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
   <body>
     <svg style="display: none">
@@ -29,30 +32,98 @@
 
     <!-- HEADER -->
     <header class="header">
-      <div class="container header-inner">
-        <a href="index.html" class="logo">
-          <span class="logo-blue">WEB</span
-          ><span class="logo-dark">STUDIO</span>
-        </a>
+        <div class="container header-inner">
+      
+        
+          <a href="index.html" class="logo">
+            <span class="logo-blue">WEB</span>
+            <span class="logo-dark">STUDIO</span>
+          </a>
+      
+          <!-- DESKTOP NAV -->
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a href="#" class="nav-link current">Studio</a></li>
+              <li><a href="#" class="nav-link">Portfolio</a></li>
+              <li><a href="#" class="nav-link contacts-open">Contacts</a></li>
+            </ul>
+          </nav>
+      
+          <!-- CONTACTS -->
+          <address class="contact">
+            <a href="mailto:info@devstudio.com" class="contact-link">
+              info@devstudio.com
+            </a>
+            <a href="tel:+110001111111" class="contact-link">
+              +11 (000) 111-11-11
+            </a>
+          </address>
+      
+          <!-- HAMBURGER BUTTON -->
+          <button class="hamburger-btn">
+            <svg width="32" height="32">
+              <use href="./images/icons/symbol-defs.svg#icon-icon-hamburger"></use>
+            </svg>
+          </button>
+      
+        </div>
+      </header>
+      
+     
+      <!-- MOBILE MENU -->
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li><a href="#" class="nav-link current">Studio</a></li>
-            <li><a href="#" class="nav-link">Portfolio</a></li>
-            <li><a href="#" class="nav-link contacts-open">Contacts</a></li>
+      <div class="mobile-menu is-hidden">
+        <button class="mobile-close-btn">✕</button>
+      
+        <nav class="mobile-nav">
+          <ul class="mobile-nav-list">
+            <li><a href="#" class="mobile-nav-link">Studio</a></li>
+            <li><a href="#" class="mobile-nav-link">Portfolio</a></li>
+            <li><a href="#" class="mobile-nav-link mobile-contacts-open">Contacts</a></li>
           </ul>
         </nav>
-
-        <address class="contact">
-          <a href="mailto:info@devstudio.com" class="contact-link"
-            >info@devstudio.com</a
-          >
-          <a href="tel:+110001111111" class="contact-link"
-            >+11 (000) 111-11-11</a
-          >
-        </address>
+      
+        <div class="mobile-contacts">
+            <a href="tel:+110001111111" class="mobile-phone">+11 (000) 111-11-11</a>
+            <a href="mailto:info@devstudio.com" class="mobile-email">info@devstudio.com</a>
+          </div>
+      
+        <ul class="mobile-social">
+          <li>
+            <a href="#">
+              <svg width="24">
+                <use href="./images/icons/symbol-defs.svg#icon-instagram-2"></use>
+              </svg>
+            </a>
+          </li>
+      
+          <li>
+            <a href="#">
+              <svg width="24">
+                <use href="./images/icons/symbol-defs.svg#icon-facebook-1"></use>
+              </svg>
+            </a>
+          </li>
+      
+          <li>
+            <a href="#">
+              <svg width="24">
+                <use href="./images/icons/symbol-defs.svg#icon-twitter-1"></use>
+              </svg>
+            </a>
+          </li>
+      
+          <li>
+            <a href="#">
+              <svg width="24">
+                <use href="./images/icons/symbol-defs.svg#icon-linkedin-1"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      
       </div>
-    </header>
+      
 
     <main>
       <!-- HERO -->
@@ -506,18 +577,21 @@
                 </svg>
               </a>
             </li>
+          </ul>
+        </div>
+        
             <div class="subscribe-container">
               <p class="subscribe-title">Subscribe</p>
 
               <form class="subscribe-form">
-                <label>
+                
                   <input
                     type="email"
                     name="email"
                     placeholder="E-mail"
                     required
                   />
-                </label>
+                
 
                 <button type="submit" class="subscribe-btn">
                   Subscribe
@@ -529,9 +603,7 @@
                 </button>
               </form>
             </div>
-          </ul>
         </div>
-      </div>
     </footer>
 
     <div class="backdrop is-hidden">
@@ -609,19 +681,38 @@
       </div>
     </div>
 
-    <script>
-      const openModal = document.querySelector(".contacts-open");
-      const modal = document.querySelector(".backdrop");
-      const closeModal = document.querySelector(".modal-close");
+   
 
-      openModal.addEventListener("click", (e) => {
-        e.preventDefault();
-        modal.classList.remove("is-hidden");
-      });
-
-      closeModal.addEventListener("click", () => {
-        modal.classList.add("is-hidden");
-      });
-    </script>
+<script>
+    /* MODAL (Ccontact formu) */
+    const openModal = document.querySelector(".contacts-open");
+    const modal = document.querySelector(".backdrop");
+    const closeModal = document.querySelector(".modal-close");
+  
+    openModal.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.remove("is-hidden");
+    });
+  
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("is-hidden");
+    });
+  
+    
+    const mobMenu = document.querySelector(".mobile-menu");
+    const mobOpen = document.querySelector(".hamburger-btn");
+    const mobClose = document.querySelector(".mobile-close-btn");
+  
+    mobOpen.addEventListener("click", () => {
+      mobMenu.classList.remove("is-hidden");
+    });
+  
+    mobClose.addEventListener("click", () => {
+      mobMenu.classList.add("is-hidden");
+    });
+  </script>
+  </body>
+  </html>
+  
   </body>
 </html>
